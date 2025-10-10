@@ -3,6 +3,7 @@
 #app {
   height: 100%;
 }
+
 html,
 body {
   position: relative;
@@ -10,7 +11,6 @@ body {
 }
 
 body {
-  background: #000;
   font-family:
     Helvetica Neue,
     Helvetica,
@@ -79,7 +79,7 @@ body {
   width: 80px !important;
   height: 6px !important;
   border-radius: 50px !important;
-  background:  white  !important;
+  background: white !important;
   background-size: 200% 100% !important;
   background-position: right bottom !important;
   transition: background-position 0.3s linear !important;
@@ -97,6 +97,7 @@ body {
   from {
     background-position: right bottom;
   }
+
   to {
     background-position: left bottom;
   }
@@ -107,7 +108,8 @@ body {
   width: 100px !important;
   height: 6px !important;
   border-radius: 50px !important;
-  background-color: white !important; /* bo'sh holatda oq */
+  background-color: white !important;
+  /* bo'sh holatda oq */
   position: relative !important;
   overflow: hidden !important;
   margin: 0 5px !important;
@@ -122,7 +124,8 @@ body {
   left: 0;
   height: 100%;
   width: 0%;
-  background-color: orangered; /* to‘lish rangi */
+  background-color: orangered;
+  /* to‘lish rangi */
   border-radius: inherit;
   transition: width 0s;
 }
@@ -137,8 +140,8 @@ body {
   from {
     width: 0%;
   }
+
   to {
     width: 100%;
   }
 }
-
