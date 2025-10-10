@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #000;
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+.swiper-pagination-bullet {
+  width: 80px !important;
+  height: 6px !important;
+  border-radius: 50px !important;
+  background:  white  !important;
+  background-size: 200% 100% !important;
+  background-position: right bottom !important;
+  transition: background-position 0.3s linear !important;
+  opacity: 0.5;
+}
+
+/* Aktiv bullet bo‘lganda rang asta harakatlanadi */
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  animation: fillGradient 3s linear forwards !important;
+}
+
+/* Animatsiya ta’rifi */
+@keyframes fillGradient {
+  from {
+    background-position: right bottom;
+  }
+  to {
+    background-position: left bottom;
+  }
+}
+
+/* Umumiy bullet */
+.swiper-pagination-bullet {
+  width: 100px !important;
+  height: 6px !important;
+  border-radius: 50px !important;
+  background-color: white !important; /* bo'sh holatda oq */
+  position: relative !important;
+  overflow: hidden !important;
+  margin: 0 5px !important;
+  opacity: 1 !important;
+}
+
+/* Progress chizig‘i */
+.swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: orangered; /* to‘lish rangi */
+  border-radius: inherit;
+  transition: width 0s;
+}
+
+/* Aktiv bullet uchun animatsiya */
+.swiper-pagination-bullet-active::before {
+  animation: fillOrange 3s linear forwards;
+}
+
+/* Orangered rang bilan to‘lish animatsiyasi */
+@keyframes fillOrange {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
