@@ -5,7 +5,6 @@ const Header = () => {
   return (
     <header className='fixed top-0 z-50 bg-white left-0 w-full '>
       <div className='container mx-auto  px-[15px] lg:px-25 pt-[18px]'>
-
         <div className='flex justify-between items-center gap-[20px] pb-[18px]'>
           <div className='flex items-center gap-[7px]'>
             <img className='flex sm:hidden' src="/public/toggle.png" alt="" />
@@ -72,11 +71,11 @@ const Header = () => {
 
         <hr className='text-[#E3E3E8] border-[1px]' />
 
-        <div className='max-w-[530px] w-full flex sm:hidden pt-[13px]'>
-          <input className='border-1 border-[#DEDEE2]  bg-[#F4F5F6] outline-none text-black rounded-[10px]  h-[44px] w-full px-[28px] py-[20px]' placeholder='Введите номер запчасти или VIN' type="search" />
+        <div className='max-w-[530px] h-[1px] w-full flex sm:hidden pt-[13px]'>
+          <input className='border-1 border-[#DEDEE2]  bg-[#F4F5F6] outline-none text-black rounded-[10px]  h-full w-full px-[28px] py-[20px]' placeholder='Введите номер запчасти или VIN' type="search" />
         </div>
 
-        <div className='pt-[20px] flex items-center justify-between gap-[10px] hidden sm:flex'>
+        <div className='pt-[20px] flex items-center justify-between gap-[10px] hidden sm:flex pb-[20px]'>
           <NavLink to="cart" className='text-black flex items-center justify-center whitespace-nowrap max-w-[220px] w-full border-[#DEDEE2] border-[1px]  p-[8px] hover:bg-[#F4F5F6] duration-[0.2s] rounded-[5px] hidden xl:flex' href="">
             Запчасти для ТО
           </NavLink>

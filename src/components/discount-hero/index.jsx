@@ -25,9 +25,15 @@ const Discount = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className="py-[120px] bg-gray-100">Slide 1</SwiperSlide>
-        <SwiperSlide className="py-[120px] bg-gray-200">Slide 2</SwiperSlide>
-        <SwiperSlide className="py-[120px] bg-gray-300">Slide 3</SwiperSlide>
+        <SwiperSlide className='rounded-[50px]'>
+          <img src="/public/hero-img1.png" alt="img" />
+        </SwiperSlide>
+        <SwiperSlide className='rounded-[50px]'>
+          <img src="/public/hero-img1.png" alt="img" />
+        </SwiperSlide>
+        <SwiperSlide className='rounded-[50px]'>
+          <img src="/public/hero-img1.png" alt="img" />
+        </SwiperSlide>
       </Swiper>
     </div>
   );

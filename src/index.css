@@ -86,6 +86,7 @@ body {
   opacity: 0.5;
 }
 
+
 /* Aktiv bullet bo‘lganda rang asta harakatlanadi */
 .swiper-pagination-bullet-active {
   opacity: 1;
@@ -115,6 +116,21 @@ body {
   margin: 0 5px !important;
   opacity: 1 !important;
 }
+
+@media (max-width:1038px) {
+  .swiper-pagination-bullet {
+    width: 50px !important;
+    height: 3.8px !important;
+  }
+}
+
+@media (max-width:638px) {
+  .swiper-pagination-bullet {
+    width: 40px !important;
+    height: 3px !important;
+  }
+}
+
 
 /* Progress chizig‘i */
 .swiper-pagination-bullet::before {
