@@ -9,7 +9,7 @@ import categories from "../../data/category";
 const HomePage = () => {
   return (
     <>
-      <section id="hero" className="bg-[#FAFAFD] mt-[38px] sm:mt-[75px]">
+      <section id="hero" className="bg-[#FAFAFD] mt-[-40px] sm:mt-[20px]">
         <div className="container mx-auto px-[15px] lg:px-25">
           <Discount />
         </div>

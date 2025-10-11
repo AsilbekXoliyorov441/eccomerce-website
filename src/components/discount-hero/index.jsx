@@ -25,14 +25,49 @@ const Discount = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className='rounded-[50px]'>
-          <img src="/public/hero-img1.png" alt="img" />
+        <SwiperSlide className='SwiperSlide-css'>
+          <div className='text-left'>
+            <h1>Оригинальные автомасла <br />
+              cо скидкой
+              <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
+                15%
+              </span> </h1>
+          </div>
+          <p className=''>Акция действует с 1 по 30 июня 2021</p>
+          <img src="/public/hero-img.png" alt="img" />
         </SwiperSlide>
-        <SwiperSlide className='rounded-[50px]'>
-          <img src="/public/hero-img1.png" alt="img" />
+        <SwiperSlide className='SwiperSlide-css'>
+          <div className='text-left'>
+            <h1>Оригинальные автомасла <br />
+              cо скидкой
+              <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
+                15%
+              </span> </h1>
+          </div>
+          <p className=''>Акция действует с 1 по 30 июня 2021</p>
+          <img src="/public/hero-img.png" alt="img" />
         </SwiperSlide>
-        <SwiperSlide className='rounded-[50px]'>
-          <img src="/public/hero-img1.png" alt="img" />
+        <SwiperSlide className='SwiperSlide-css'>
+          <div className='text-left'>
+            <h1>Оригинальные автомасла <br />
+              cо скидкой
+              <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
+                15%
+              </span> </h1>
+          </div>
+          <p className=''>Акция действует с 1 по 30 июня 2021</p>
+          <img src="/public/hero-img.png" alt="img" />
+        </SwiperSlide>
+        <SwiperSlide className='SwiperSlide-css'>
+          <div className='text-left'>
+            <h1>Оригинальные автомасла <br />
+              cо скидкой
+              <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
+                15%
+              </span> </h1>
+          </div>
+          <p className=''>Акция действует с 1 по 30 июня 2021</p>
+          <img src="/public/hero-img.png" alt="img" />
         </SwiperSlide>
       </Swiper>
     </div>
