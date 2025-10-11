@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 z-50 bg-white left-0 w-full ">
+      <header className="fixed shadow-lg shadow-blue-300/20 top-0 z-50 bg-white left-0 w-full ">
         <div className="container mx-auto  px-[15px] lg:px-25 pt-[18px]">
           <div className="flex justify-between items-center gap-[20px] pb-[18px]">
             <div className="flex items-center gap-[7px]">

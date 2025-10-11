@@ -1,85 +1,121 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useMemo } from "react";
 
-const people = [
-  { id: 1, name: "Tom Cook" },
-  { id: 2, name: "Wade Cooper" },
-  { id: 3, name: "Tanya Fox" },
-  { id: 4, name: "Arlene Mccoy" },
-  { id: 5, name: "Devon Webb" },
+const brands = [
+  { id: 1, name: "4go", count: 1450 },
+  { id: 2, name: "Aez" },
+  { id: 3, name: "Alessio" },
+  { id: 4, name: "Anzio" },
+  { id: 5, name: "BMW" },
+  { id: 6, name: "Borbet" },
+  { id: 7, name: "Dezent" },
+  { id: 8, name: "OZ Racing" },
+  { id: 9, name: "MAK" },
+  { id: 10, name: "Ronal" },
 ];
 
-export default function FilterSelect() {
-  const [selected, setSelected] = useState(people[1]);
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null);
+export default function FilterBrand() {
+  const [isOpen, setIsOpen] = useState(true);
+  const [selected, setSelected] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showAll, setShowAll] = useState(false);
 
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  const filteredBrands = useMemo(() => {
+    const filtered = brands.filter((b) =>
+      b.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    return showAll ? filtered : filtered.slice(0, 5);
+  }, [searchTerm, showAll]);
+
+  const toggleSelect = (id) => {
+    setSelected((prev) =>
+      prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id]
+    );
+  };
 
   return (
-    <div className="mx-auto h-screen w-52 pt-20" ref={dropdownRef}>
+    <div className=" rounded-lg border-none w-full">
+      {/* Header */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="relative block w-full border-[2px] border-[gray] rounded-lg  py-1.5 pr-8 pl-3 text-left text-sm  focus:outline-none"
+        className="w-full flex items-center cursor-pointer justify-between px-4 py-3 border-none outline-none text-sm  font-medium text-gray-800 hover:bg-gray-50"
       >
-        {selected.name}
+        <span>Бренд</span>
         <svg
-          className={`absolute top-2.5 right-2.5 w-4 h-4 text-gray-500/60  transition-transform duration-200 ${
+          className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
           xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 20 20"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
         >
           <path
-            fillRule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 10.939l3.71-3.71a.75.75 0 111.06 1.061l-4.24 4.25a.75.75 0 01-1.06 0L5.25 8.27a.75.75 0 01-.02-1.06z"
-            clipRule="evenodd"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 9l-7 7-7-7"
           />
         </svg>
       </button>
 
-      {/* Dropdown list */}
-      {isOpen && (
-        <ul className="mt-1 w-full rounded-xl border border-gray/50 bg-white/10 p-1 transition duration-150 ease-in-out backdrop-blur-sm">
-          {people.map((person) => (
-            <li
-              key={person.id}
-              onClick={() => {
-                setSelected(person);
-                setIsOpen(false);
-              }}
-              className={`flex cursor-pointer items-center gap-2 rounded-lg px-3 py-1.5 text-sm text-gray-500 hover:bg-white/10 ${
-                selected.id === person.id ? "bg-white/10" : ""
-              }`}
-            >
-              {/* check icon */}
-              <svg
-                className={`w-4 h-4 transition-opacity ${
-                  selected.id === person.id ? "opacity-100" : "opacity-0"
-                }`}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+      {/* Content */}
+
+      <div className="overflow-hidden">
+        <div
+          className={`px-4 pb-3 ${isOpen ? "mt-[-200%] lg:-mt-[110%]" : ""} duration-300 pt-1 w-full border-t border-gray-100`}
+        >
+          {/* Search input */}
+          <input
+            type="text"
+            placeholder="Быстрый поиск"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full rounded-md border border-gray-200 px-3 py-1.5 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+          />
+
+          {/* Brand list */}
+          <ul className="mt-3 max-h-48 overflow-y-auto">
+            {filteredBrands.map((brand) => (
+              <li
+                key={brand.id}
+                className="flex items-center gap-2 px-1.5 py-1 rounded-md hover:bg-gray-50 cursor-pointer"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M16.704 5.29a1 1 0 010 1.42l-7.025 7.025a1 1 0 01-1.414 0L3.296 8.765a1 1 0 111.414-1.414l4.55 4.55 6.318-6.318a1 1 0 011.426.707z"
-                  clipRule="evenodd"
+                <input
+                  type="checkbox"
+                  checked={selected.includes(brand.id)}
+                  onChange={() => toggleSelect(brand.id)}
+                  id={`${brand.name}`}
+                  className="w-4 h-4 accent-blue-600"
                 />
-              </svg>
-              {person.name}
-            </li>
-          ))}
-        </ul>
-      )}
+                <label
+                  htmlFor={`${brand.name}`}
+                  className="text-sm text-gray-700 w-full cursor-pointer select-none"
+                >
+                  {brand.name}{" "}
+                  {brand.count && (
+                    <span className="text-gray-400 text-xs ml-1">
+                      ({brand.count})
+                    </span>
+                  )}
+                </label>
+              </li>
+            ))}
+            {filteredBrands.length === 0 && (
+              <p className="text-xs text-gray-400 px-2 py-2">
+                Ничего не найдено
+              </p>
+            )}
+          </ul>
+
+          {/* Show all / collapse link */}
+          <button
+            onClick={() => setShowAll((prev) => !prev)}
+            className="text-xs text-blue-600 mt-2 hover:underline"
+          >
+            {showAll ? "Скрыть" : "Показать все"}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
