@@ -20,6 +20,8 @@ body {
   height: 100%;
 }
 
+
+
 body {
   font-family:
     Helvetica Neue,
@@ -27,7 +29,6 @@ body {
     Arial,
     sans-serif;
   font-size: 14px;
-  color: #fff;
   margin: 0;
   padding: 0;
 }
