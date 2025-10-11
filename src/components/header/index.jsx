@@ -169,7 +169,7 @@ const Header = () => {
             <NavLink to="cart" className='text-black flex items-center justify-center whitespace-nowrap max-w-[220px] w-full border-[#DEDEE2] border-[1px]  p-[8px] hover:bg-[#F4F5F6] duration-[0.2s] rounded-[5px]' href="">
               Аккумуляторы
             </NavLink>
-            <NavLink to="cart" className='text-black flex items-center justify-center whitespace-nowrap max-w-[150px] w-full border-[#DEDEE2] border-[1px]  p-[2.7px] hover:bg-[#F4F5F6] duration-[0.2s] rounded-[5px] gap-[5px]' href="">
+            <NavLink to="cart" className='text-black flex items-center justify-center whitespace-nowrap max-w-[150px] w-full border-[#DEDEE2] border-[1px]  p-[7px] hover:bg-[#F4F5F6] duration-[0.2s] rounded-[5px] gap-[5px]' href="">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5946D7"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" /></svg>
               <p>Корзина</p>
             </NavLink>
@@ -177,16 +177,14 @@ const Header = () => {
         </div>
       </header>
 
-      <header>
+    
         <div className='container mx-auto px-[15px] lg:px-25 pt-[18px] mt-[40px]'>
           <div className='max-w-[530px] h-[1px] w-full flex sm:hidden pt-[13px]'>
             <input className='border-1 border-[#DEDEE2]  bg-[#F4F5F6] outline-none text-black rounded-[10px]  h-full w-full px-[28px] py-[20px]' placeholder='Введите номер запчасти или VIN' type="search" />
           </div>
         </div>
-      </header>
 
     </>
-
   )
 }
 

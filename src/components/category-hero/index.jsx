@@ -9,7 +9,7 @@ const CategoryHero = ({name , number , url}) => {
         alt="Salom"
       />
       <div>
-        {name} <br /> {number} 
+        <p className='text-[18px]'>{name}</p> <p>{number} </p>
       </div>
     </div>
   );
