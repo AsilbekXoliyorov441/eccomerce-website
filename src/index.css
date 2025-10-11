@@ -13,6 +13,7 @@
 #app {
   height: 100%;
 }
+
 html,
 body {
   position: relative;
@@ -20,7 +21,6 @@ body {
 }
 
 body {
-  background: #000;
   font-family:
     Helvetica Neue,
     Helvetica,
@@ -89,12 +89,13 @@ body {
   width: 80px !important;
   height: 6px !important;
   border-radius: 50px !important;
-  background:  white  !important;
+  background: white !important;
   background-size: 200% 100% !important;
   background-position: right bottom !important;
   transition: background-position 0.3s linear !important;
   opacity: 0.5;
 }
+
 
 /* Aktiv bullet bo‘lganda rang asta harakatlanadi */
 .swiper-pagination-bullet-active {
@@ -107,6 +108,7 @@ body {
   from {
     background-position: right bottom;
   }
+
   to {
     background-position: left bottom;
   }
@@ -117,12 +119,28 @@ body {
   width: 100px !important;
   height: 6px !important;
   border-radius: 50px !important;
-  background-color: white !important; /* bo'sh holatda oq */
+  background-color: white !important;
+  /* bo'sh holatda oq */
   position: relative !important;
   overflow: hidden !important;
   margin: 0 5px !important;
   opacity: 1 !important;
 }
+
+@media (max-width:1038px) {
+  .swiper-pagination-bullet {
+    width: 50px !important;
+    height: 3.8px !important;
+  }
+}
+
+@media (max-width:638px) {
+  .swiper-pagination-bullet {
+    width: 40px !important;
+    height: 3px !important;
+  }
+}
+
 
 /* Progress chizig‘i */
 .swiper-pagination-bullet::before {
@@ -132,7 +150,8 @@ body {
   left: 0;
   height: 100%;
   width: 0%;
-  background-color: orangered; /* to‘lish rangi */
+  background-color: orangered;
+  /* to‘lish rangi */
   border-radius: inherit;
   transition: width 0s;
 }
@@ -147,9 +166,11 @@ body {
   from {
     width: 0%;
   }
+
   to {
     width: 100%;
   }
+<<<<<<< HEAD
 }
 
 
@@ -159,3 +180,6 @@ body {
 
 
 
+=======
+}
+>>>>>>> af30c213ad649c98312fc58d6a31d4c8d533fcd4
