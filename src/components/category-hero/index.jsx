@@ -9,7 +9,7 @@ const CategoryHero = ({name , number , url , id}) => {
     >
       <img width={60} src={url} alt="Salom" />
       <div>
-        {name} <br /> {number}
+        <p className='text-[18px]'>{name}</p> <p>{number} </p>
       </div>
     </Link>
   );

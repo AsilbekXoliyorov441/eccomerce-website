@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { NavLink } from 'react-router-dom';
 const Discount = () => {
   return (
     <div className="py-[100px]">
@@ -26,48 +27,48 @@ const Discount = () => {
         className="mySwiper"
       >
         <SwiperSlide className='SwiperSlide-css'>
-          <div className='text-left'>
+          <NavLink to='cart' className='text-left'>
             <h1>Оригинальные автомасла <br />
               cо скидкой
               <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
                 15%
               </span> </h1>
-          </div>
-          <p className=''>Акция действует с 1 по 30 июня 2021</p>
-          <img src="/public/hero-img.png" alt="img" />
+            <p className=''>Акция действует с 1 по 30 июня 2021</p>
+            <img src="/hero-img.png" alt="img" />
+          </NavLink>
         </SwiperSlide>
         <SwiperSlide className='SwiperSlide-css'>
-          <div className='text-left'>
+          <NavLink to='cart' className='text-left'>
             <h1>Оригинальные автомасла <br />
               cо скидкой
               <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
                 15%
               </span> </h1>
-          </div>
-          <p className=''>Акция действует с 1 по 30 июня 2021</p>
-          <img src="/public/hero-img.png" alt="img" />
+            <p className=''>Акция действует с 1 по 30 июня 2021</p>
+            <img src="/hero-img.png" alt="img" />
+          </NavLink>
         </SwiperSlide>
         <SwiperSlide className='SwiperSlide-css'>
-          <div className='text-left'>
+          <NavLink to='cart' className='text-left'>
             <h1>Оригинальные автомасла <br />
               cо скидкой
               <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
                 15%
               </span> </h1>
-          </div>
-          <p className=''>Акция действует с 1 по 30 июня 2021</p>
-          <img src="/public/hero-img.png" alt="img" />
+            <p className=''>Акция действует с 1 по 30 июня 2021</p>
+            <img src="/hero-img.png" alt="img" />
+          </NavLink>
         </SwiperSlide>
         <SwiperSlide className='SwiperSlide-css'>
-          <div className='text-left'>
+          <NavLink to='cart' className='text-left'>
             <h1>Оригинальные автомасла <br />
               cо скидкой
               <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
                 15%
               </span> </h1>
-          </div>
-          <p className=''>Акция действует с 1 по 30 июня 2021</p>
-          <img src="/public/hero-img.png" alt="img" />
+            <p className=''>Акция действует с 1 по 30 июня 2021</p>
+            <img src="/hero-img.png" alt="img" />
+          </NavLink>
         </SwiperSlide>
       </Swiper>
     </div>

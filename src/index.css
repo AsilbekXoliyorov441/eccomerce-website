@@ -122,12 +122,89 @@ body {
   border-radius: 50px !important;
   background-color: rgba(128, 128, 128, 0.534) !important;
   /* bo'sh holatda oq */
+  left: -495px;
+  top: -60px;
   position: relative !important;
   overflow: hidden !important;
   margin: 0 5px !important;
-  left: -490px;
-  top: -40px;
   opacity: 1 !important;
+}
+
+@media (max-width:1235px) {
+  .swiper-pagination-bullet {
+    left: -270px !important;
+    top: -0px !important;
+  }
+}
+
+@media (max-width:1000px) {
+  .swiper-pagination-bullet {
+    left: -230px !important;
+    top: -0px !important;
+  }
+}
+
+@media (max-width:773px) {
+  .swiper-pagination-bullet {
+    left: -170px !important;
+    top: -0px !important;
+  }
+}
+
+@media (max-width:585px) {
+  .swiper-pagination-bullet {
+    left: -155px !important;
+    top: -0px !important;
+  }
+}
+
+@media (max-width:532px) {
+  .swiper-pagination-bullet {
+    left: -140px !important;
+    top: -0px !important;
+  }
+}
+
+@media (max-width:500px) {
+  .swiper-pagination-bullet {
+    left: -120px !important;
+    top: 5px !important;
+  }
+}
+
+@media (max-width:446px) {
+  .swiper-pagination-bullet {
+    left: -100px !important;
+    top: 5px !important;
+  }
+}
+
+@media (max-width:446px) {
+  .swiper-pagination-bullet {
+    left: -90px !important;
+    top: 5px !important;
+  }
+}
+
+@media (max-width:402px) {
+  .swiper-pagination-bullet {
+    left: -80px !important;
+    top: 5px !important;
+  }
+}
+
+@media (max-width:390px) {
+  .swiper-pagination-bullet {
+    left: -70px !important;
+    top: 7px !important;
+  }
+}
+
+@media (max-width:376px) {
+  .swiper-pagination-bullet {
+    left: -65px !important;
+    top: 9px !important;
+  }
 }
 
 @media (max-width:1038px) {
