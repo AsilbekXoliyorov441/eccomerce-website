@@ -186,7 +186,7 @@ const Header = () => {
       </header>
 
 
-      <div className='container mx-auto px-[15px] lg:px-25 pt-[18px] mt-[40px]'>
+      <div className='container mx-auto px-[15px] lg:px-25 pt-[18px] mt-[60px] sm:mt-[40px]'>
         <div className='max-w-[530px] h-[1px] w-full flex sm:hidden pt-[13px]'>
           <input className='border-1 border-[#DEDEE2]  bg-[#F4F5F6] outline-none text-black rounded-[10px]  h-full w-full px-[28px] py-[20px]' placeholder='Введите номер запчасти или VIN' type="search" />
         </div>
