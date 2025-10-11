@@ -53,22 +53,25 @@ let categories = [
     number: "730 товаров",
     url: "/public/category-8.svg",
   },
-     {
+  {
     id: 10,
     name: "Аккумуляторы",
     number: "730 товаров",
     url: "/public/category-9.svg",
   },
-     {
+  {
     id: 11,
     name: "Автолампы",
     number: "730 товаров",
     url: "/public/category-10.svg",
   },
   {
-    id:12,
-    url: "/public/category-11.png",
-  }
+    id: 12,
+    name: "Автомасла",
+    number: "730 товаров",
+    url: "/public/category-1.svg",
+  },
+
 ];
 
 export default categories;

@@ -14,7 +14,7 @@ const App = () => {
           <Route path="" element={<HomePage />} />
           <Route path="cart" element={<CartPage />} />
           <Route path="single/:id" element={<SinglePage />} />
-          <Route path="filter:categoryId" element={<FilterPage />} />
+          <Route path="filter/:categoryId" element={<FilterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
