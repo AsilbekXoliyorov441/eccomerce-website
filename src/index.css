@@ -1,3 +1,13 @@
+@theme {
+  --color-primary: hsl(25 100% 50%);
+  --color-secondary: hsl(210 20% 30%);
+  --radius: 10px;
+}
+
+.active{
+  color: red;
+}
+
 @import "tailwindcss";
 
 #app {
@@ -141,4 +151,11 @@ body {
     width: 100%;
   }
 }
+
+
+/* Define theme variables */
+/* globals.css */
+
+
+
 

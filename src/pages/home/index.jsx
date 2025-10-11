@@ -15,7 +15,7 @@ const HomePage = () => {
       <section id="category">
         <div className="categories grid grid-cols-3">
           {categories.map((el) => {
-            return <CategoryHero name={el.name} number={el.number} url={el.url} />;
+            return <CategoryHero  name={el.name} number={el.number} url={el.url} id={el.id} />;
           })}
         </div>
       </section>

@@ -1,13 +1,10 @@
-import React from 'react'
+import { NavLink } from "react-router-dom";
 
-const Header = () => {
+export default function Header() {
   return (
-    <header>
-      <div className='container mx-auto'>
-        <h1>Header</h1>
-      </div>
+    <header className="p-6 bg-black text-center">
+      <NavLink to={""}>Home</NavLink>
+      <NavLink to={"cart"}>cart</NavLink>
     </header>
-  )
+  );
 }
-
-export default Header

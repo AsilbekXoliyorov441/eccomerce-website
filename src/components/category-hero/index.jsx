@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-const CategoryHero = ({name , number , url}) => {
+const CategoryHero = ({name , number , url , id}) => {
   return (
-    <div className="flex">
+    <Link to={`single/${id}`} className="flex">
       <img
       width={100}
         src={url}
@@ -11,7 +12,7 @@ const CategoryHero = ({name , number , url}) => {
       <div>
         {name} <br /> {number}
       </div>
-    </div>
+    </Link>
   );
 }
 
