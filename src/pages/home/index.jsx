@@ -20,7 +20,7 @@ const HomePage = () => {
         <div className="container mx-auto px-[20px] sm:px-[20px] lg:px-[100px]">
           <div className="categories grid grid-cols-2 gap-[10px] sm:gap-0 sm:grid-cols-2 xl:grid-cols-3 mt-[-60px]">
             {categories.map((el) => {
-              return <CategoryHero name={el.name} number={el.number} url={el.url} />;
+              return <CategoryHero key={el.name} name={el.name} number={el.number} url={el.url} />;
             })}
           </div>
         </div>

@@ -1,3 +1,13 @@
+@theme {
+  --color-primary: hsl(25 100% 50%);
+  --color-secondary: hsl(210 20% 30%);
+  --radius: 10px;
+}
+
+.active{
+  color: red;
+}
+
 @import "tailwindcss";
 
 #app {
@@ -10,6 +20,8 @@ body {
   height: 100%;
 }
 
+
+
 body {
   font-family:
     Helvetica Neue,
@@ -17,9 +29,9 @@ body {
     Arial,
     sans-serif;
   font-size: 14px;
-  color: #fff;
   margin: 0;
   padding: 0;
+  background-color: #F8F8FA;
 }
 
 .swiper {
