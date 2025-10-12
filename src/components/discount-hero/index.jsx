@@ -37,7 +37,7 @@ const Discount = () => {
             <img src="/hero-img.png" alt="img" />
           </NavLink>
         </SwiperSlide>
-        <SwiperSlide className='SwiperSlide-css'>
+        <SwiperSlide className='SwiperSlide-css text-[white]'>
           <NavLink to='cart' className='text-left'>
             <h1>Оригинальные автомасла <br />
               cо скидкой
@@ -48,7 +48,7 @@ const Discount = () => {
             <img src="/hero-img.png" alt="img" />
           </NavLink>
         </SwiperSlide>
-        <SwiperSlide className='SwiperSlide-css'>
+        <SwiperSlide className='SwiperSlide-css text-[white]'>
           <NavLink to='cart' className='text-left'>
             <h1>Оригинальные автомасла <br />
               cо скидкой
@@ -59,7 +59,7 @@ const Discount = () => {
             <img src="/hero-img.png" alt="img" />
           </NavLink>
         </SwiperSlide>
-        <SwiperSlide className='SwiperSlide-css'>
+        <SwiperSlide className='SwiperSlide-css text-[white]'>
           <NavLink to='cart' className='text-left'>
             <h1>Оригинальные автомасла <br />
               cо скидкой

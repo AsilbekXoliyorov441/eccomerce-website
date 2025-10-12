@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Header = () => {
+  const [toggle, setToggle] = useState(false);
   return (
     <>
       <header className='fixed top-0 z-50 bg-white left-0 w-full '>
@@ -184,7 +185,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-
 
       <div className='container mx-auto px-[15px] lg:px-25 pt-[18px] mt-[60px] sm:mt-[40px]'>
         <div className='max-w-[530px] h-[1px] w-full flex sm:hidden pt-[13px]'>

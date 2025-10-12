@@ -25,7 +25,7 @@ let categories = [
   },
   {
     id: 5,
-    name: "Запчасти для ТО F  ",
+    name: "Запчасти для ТО ",
     number: "730 товаров",
     url: "/category-4.svg",
   },

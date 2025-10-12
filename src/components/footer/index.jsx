@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
           <hr className='border-[1px] border-[#b5b5b59c]' />
 
-          <div className='flex items-center justify-between py-[20px]'>
+          <div className='flex items-center justify-between py-[20px] text-[white]'>
             <div className='hidden xl:flex'>
               <p>Copyright © ООО «Oner.ru» 2021. All rights reserved.</p>
             </div>
