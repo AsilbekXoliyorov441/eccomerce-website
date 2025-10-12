@@ -5,6 +5,10 @@ import CategoryHero from "../../components/category-hero";
 import categories from "../../data/category";
 import ProductPage from "../../components/products";
 import products from "../../data/cart";
+import ProductCard from "../../components/products";
+import { Link } from "react-router-dom";
+import productAbout from "../../data/product-about";
+import ProductAbout from "../../components/discount-about";
 
 
 
@@ -26,10 +30,26 @@ const HomePage = () => {
         </div>
       </section>
       <section id="products">
-        <div className="contaienr mx-auto px-[100px]">
-          <div className="products">
+        <div className="container mx-auto px-[100px] mt-[80px]">
+          <div className="flex items-center justify-between pb-[20px]">
+            <h1 className="text-[24px] font-bold">Автомасла</h1>
+            <Link to={`filter/name`} className="flex gap-[7px] items-center rounded-[10px] bg-[#eaeced] p-[10px]">
+              <p className="text-[#5946D7] text-[14px] font-bold">Все автомасла</p>
+              <img src="/Arrow.png" alt="" />
+            </Link>
+          </div>
+          <div className="products grid grid-cols-4 gap-[20px]">
             {products.map((el) => {
-              return <ProductPage name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
+              return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
+            })}
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container mx-auto px-[100px] pt-[60px]">
+          <div className="productAbout grid grid-cols-3 gap-[20px]">
+            {productAbout.map((el) => {
+              return <ProductAbout key={el.name} name={el.name} desc={el.desc} url={el.url} />
             })}
           </div>
         </div>

@@ -26,7 +26,7 @@ const Discount = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className='SwiperSlide-css'>
+        <SwiperSlide className='SwiperSlide-css text-[white]'>
           <NavLink to='cart' className='text-left'>
             <h1>Оригинальные автомасла <br />
               cо скидкой
