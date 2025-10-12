@@ -15,7 +15,7 @@ let products = [
         price: "2 334 ₽",
         article: "Артикул: 153789",
         rating: "4.0 (51)",
-        url: "/public/card-1.png",
+        url: "/products-1.png",
     },
     {
         id: 1,
@@ -24,7 +24,7 @@ let products = [
         price: "2 334 ₽",
         article: "Артикул: 153789",
         rating: "4.0 (51)",
-        url: "/card-1.png",
+        url: "/products-2.png",
     },
     {
         id: 1,
@@ -33,7 +33,7 @@ let products = [
         price: "2 334 ₽",
         article: "Артикул: 153789",
         rating: "4.0 (51)",
-        url: "/card-1.png",
+        url: "/products-3.png",
     }
 
 ];

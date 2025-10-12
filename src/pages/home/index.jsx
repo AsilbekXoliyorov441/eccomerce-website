@@ -45,11 +45,35 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section>
+      <section id="productsAbout">
         <div className="container mx-auto px-[100px] pt-[60px]">
           <div className="productAbout grid grid-cols-3 gap-[20px]">
             {productAbout.map((el) => {
               return <ProductAbout key={el.name} name={el.name} desc={el.desc} url={el.url} />
+            })}
+          </div>
+        </div>
+      </section>
+      <section id="products" className="pt-[60px]">
+        <div className="container mx-auto px-[100px]">
+          <div>
+            <h1 className="text-[24px] font-bold pb-[30px]">Рекомендуем</h1>
+          </div>
+          <div className="products grid grid-cols-4">
+            {products.map((el) => {
+              return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
+            })}
+          </div>
+        </div>
+      </section>
+      <section id="products" className="pt-[60px]">
+        <div className="container mx-auto px-[100px]">
+          <div>
+            <h1 className="text-[24px] font-bold pb-[30px]">Часто продаваемые</h1>
+          </div>
+          <div className="products grid grid-cols-4">
+            {products.map((el) => {
+              return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
             })}
           </div>
         </div>
