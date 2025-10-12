@@ -7,6 +7,7 @@ const FilterProduct = () => {
         className="mx-auto flex justify-center"
         src="/product-1.png"
         alt=""
+        
       />
       <h2 className=" sm:text-[18px] text-[#1B1D1F] font-bold mt-[20px]">
         Ls Replica
