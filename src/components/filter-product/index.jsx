@@ -20,6 +20,7 @@ const FilterProduct = () => {
       </p>
       <button className="rounded-[4px] text-[10px] sm:text-[16px] w-full py-[10px] sm:py-[15px] text-[#2E1066] font-bold bg-[#5946D71A] mt-[20px] cursor-pointer hover:bg-[#2E1066] hover:text-white duration-300">
         Цены от 12 739 ₽
+        
       </button>
     </div>
   );
