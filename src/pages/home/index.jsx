@@ -22,14 +22,14 @@ const HomePage = () => {
       </section>
       <section id="category" className="bg-[#FAFAFD]">
         <div className="container mx-auto px-[20px] sm:px-[20px] lg:px-[100px]">
-          <div className="categories grid grid-cols-2 gap-[10px] sm:gap-0 sm:grid-cols-2 xl:grid-cols-3 mt-[-60px]">
+          <div className="categories grid grid-cols-4 gap-[10px] sm:gap-0 sm:grid-cols-2 xl:grid-cols-3 mt-[-60px]">
             {categories.map((el) => {
               return <CategoryHero key={el.name} name={el.name} number={el.number} url={el.url} />;
             })}
           </div>
         </div>
       </section>
-      <section id="products">
+      {/* <section id="products">
         <div className="container mx-auto px-[100px] mt-[80px]">
           <div className="flex items-center justify-between pb-[20px]">
             <h1 className="text-[24px] font-bold">Автомасла</h1>
@@ -77,7 +77,7 @@ const HomePage = () => {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
