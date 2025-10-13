@@ -1,6 +1,7 @@
 import React from "react";
 
 import Discount from "../../components/discount-hero";
+import CatalogPage from "../catalog";
 import CategoryHero from "../../components/category-hero";
 import categories from "../../data/category";
 import ProductPage from "../../components/products";
@@ -15,12 +16,13 @@ import ProductAbout from "../../components/discount-about";
 const HomePage = () => {
   return (
     <>
-      <section id="hero" className="bg-[#FAFAFD] mt-[-40px] sm:mt-[20px]">
+
+      <section id="hero" className="bg-[#FAFAFD]  sm:mt-[100px]">
         <div className="container mx-auto px-[15px] lg:px-25">
           <Discount />
         </div>
       </section>
-      <section id="category" className="bg-[#FAFAFD]">
+      {/* <section id="category" className="bg-[#FAFAFD]">
         <div className="container mx-auto px-[20px] sm:px-[20px] lg:px-[100px]">
           <div className="categories grid grid-cols-4 gap-[10px] sm:gap-0 sm:grid-cols-2 xl:grid-cols-3 mt-[-60px]">
             {categories.map((el) => {
@@ -28,7 +30,7 @@ const HomePage = () => {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <section id="products">
         <div className="container mx-auto px-[100px] mt-[80px]">
           <div className="flex items-center justify-between pb-[20px]">
@@ -78,6 +80,8 @@ const HomePage = () => {
           </div>
         </div>
       </section> */}
+
+      
     </>
   );
 };
