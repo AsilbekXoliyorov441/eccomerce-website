@@ -1,27 +1,31 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import filterProducts from "./../../data/filter-products";
 
-const brands = [
-  { id: 1, name: "4go", count: 1450 },
-  { id: 2, name: "Aez" },
-  { id: 3, name: "Alessio" },
-  { id: 4, name: "Anzio" },
-  { id: 5, name: "BMW" },
-  { id: 6, name: "Borbet" },
-  { id: 7, name: "Dezent" },
-  { id: 8, name: "OZ Racing" },
-  { id: 9, name: "MAK" },
-  { id: 10, name: "Ronal" },
-];
-
-export default function FilterBrand() {
+export default function FilterBrand({ filtered, setFiltered }) {
   const [isOpen, setIsOpen] = useState(true);
   const [selected, setSelected] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [showAll, setShowAll] = useState(false);
+  let res = [];
+  let brands = [];
+  console.log(filtered);
+  console.log(selected);
+  
+
+  for (let el of filterProducts) {
+    if (res.includes(el.brand)) {
+    } else {
+      brands.push(el);
+    }
+  }
+
+  useEffect(() => {
+    setFiltered(selected.length > 0  ? filterProducts.filter((el) => selected.includes(el.id)) : filterProducts)
+  } , [selected])
 
   const filteredBrands = useMemo(() => {
     const filtered = brands.filter((b) =>
-      b.name.toLowerCase().includes(searchTerm.toLowerCase())
+      b.brand.toLowerCase().includes(searchTerm.toLowerCase())
     );
     return showAll ? filtered : filtered.slice(0, 5);
   }, [searchTerm, showAll]);
@@ -91,7 +95,7 @@ export default function FilterBrand() {
                   htmlFor={`${brand.name}`}
                   className="text-sm text-gray-700 w-full cursor-pointer select-none"
                 >
-                  {brand.name}{" "}
+                  {brand.brand}{" "}
                   {brand.count && (
                     <span className="text-gray-400 text-xs ml-1">
                       ({brand.count})

@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FilterProduct from "../../components/filter-product";
 import FilterSelect from "../../components/filter-select";
 import FilterSize from "../../components/filter-size";
+import filterProducts from './../../data/filter-products';
 
 const FilterPage = () => {
   const [isOpen , setIsOpen] = useState(false);
+  const [filtered , setFiltered] = useState(filterProducts);
+  console.log(filtered);
+  
+
   return (
     <>
       <section id="filter" className=" pt-[50px] sm:pt-[140px]">
@@ -13,22 +18,24 @@ const FilterPage = () => {
             Колесные диски
           </h1>
           <div className="filter-part gap-[30px] flex-col md:flex-row  flex justify-between">
-            <div className="sticky top-[65px] sm:top-[180px] md:static rounded-[4px]  md:max-w-[200px]  lg:max-w-[300px]  w-full">
+            <div className="sticky top-[82px] sm:top-[180px] md:static rounded-[4px]  md:max-w-[200px]  lg:max-w-[300px]  w-full">
               <div className="bg-white md:hidden w-full flex justify-center rounded-[4px] p-[5px]">
                 <button onClick={() => setIsOpen(!isOpen)} className="border-[#DEDEE2] border-[1px] w-full p-[10px] rounded-[4px]">
                   Фильтры
                 </button>
               </div>
-              <div className={`absolute flex ${isOpen  ?"" : "hidden"}  sm:flex-col bg-white max-h-[300px] overflow-y-scroll top-[60px] md:sticky md:top-[190px] md:block md:max-w-[200px]  lg:max-w-[300px]  w-full rounded-[6px] p-[20px] border-[#E3E3E8] border-[1px] `}>
-                <FilterSelect />
+              <div className={`absolute flex ${isOpen  ?"" : "hidden"}  sm:flex-col bg-white h-auto overflow-y-scroll md:overflow-y-auto top-[60px] md:sticky md:top-[190px] md:block md:max-w-[200px]  lg:max-w-[300px]  w-full rounded-[6px] p-[20px] border-[#E3E3E8] border-[1px] `}>
+                <FilterSelect filtered={filtered} setFiltered={setFiltered} />
                 <FilterSize />
               </div>
             </div>
 
             <div className="w-full grid grid-cols-2 xl:grid-cols-3 gap-[5px] sm:gap-[20px]">
-              <FilterProduct /> <FilterProduct /> <FilterProduct />
-              <FilterProduct /> <FilterProduct />
-              <FilterProduct /> <FilterProduct /> <FilterProduct />
+              {
+                filtered?.map((el) => {
+                  return <FilterProduct el={el}  />
+                })
+              }
             </div>
           </div>
         </div>
