@@ -31,16 +31,16 @@ const HomePage = () => {
           </div>
         </div>
       </section> */}
-      {/* <section id="products">
-        <div className="container mx-auto px-[100px] mt-[80px]">
+      <section id="products">
+        <div className="container mx-auto px-[20px] lg:px-[100px] mt-[-60px] sm:mt-[-35px]">
           <div className="flex items-center justify-between pb-[20px]">
-            <h1 className="text-[24px] font-bold">Автомасла</h1>
-            <Link to={`filter/name`} className="flex gap-[7px] items-center rounded-[10px] bg-[#eaeced] p-[10px]">
+            <h1 className="text-[20px] sm:text-[24px] font-bold">Автомасла</h1>
+            <Link to={`filter/name`} className="flex gap-[7px] items-center rounded-[10px] bg-[#eaeced] p-[5px] sm:p-[10px]">
               <p className="text-[#5946D7] text-[14px] font-bold">Все автомасла</p>
               <img src="/Arrow.png" alt="" />
             </Link>
           </div>
-          <div className="products grid grid-cols-4 gap-[20px]">
+          <div className="products grid grid-cols-6 gap-[260px] sm:gap-[310px] overflow-x-scroll">
             {products.map((el) => {
               return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
             })}
@@ -48,40 +48,38 @@ const HomePage = () => {
         </div>
       </section>
       <section id="productsAbout">
-        <div className="container mx-auto px-[100px] pt-[60px]">
-          <div className="productAbout grid grid-cols-3 gap-[20px]">
+        <div className="container mx-auto px-[20px] lg:px-[100px]  pt-[60px]">
+          <div className="productAbout grid grid-cols-3 gap-[310px] sm:gap-[450px]  xl:gap-[20px] overflow-x-scroll">
             {productAbout.map((el) => {
               return <ProductAbout key={el.name} name={el.name} desc={el.desc} url={el.url} />
             })}
           </div>
         </div>
       </section>
-      <section id="products" className="pt-[60px]">
-        <div className="container mx-auto px-[100px]">
-          <div>
-            <h1 className="text-[24px] font-bold pb-[30px]">Рекомендуем</h1>
+      <section id="products">
+        <div className="container mx-auto px-[20px] lg:px-[100px] mt-[30px] sm:mt-[60px]">
+          <div className="flex items-center justify-between pb-[20px]">
+            <h1 className="text-[20px] sm:text-[24px] font-bold">Рекомендуем</h1>
           </div>
-          <div className="products grid grid-cols-4">
+          <div className="products grid grid-cols-6 gap-[260px] sm:gap-[310px] overflow-x-scroll">
             {products.map((el) => {
               return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
             })}
           </div>
         </div>
       </section>
-      <section id="products" className="pt-[60px]">
-        <div className="container mx-auto px-[100px]">
-          <div>
-            <h1 className="text-[24px] font-bold pb-[30px]">Часто продаваемые</h1>
+      <section id="products">
+        <div className="container mx-auto px-[20px] pb-[60px] lg:px-[100px] mt-[30px] sm:mt-[60px]">
+          <div className="flex items-center justify-between pb-[20px]">
+            <h1 className="text-[20px] sm:text-[24px] font-bold">Часто продаваемые</h1>
           </div>
-          <div className="products grid grid-cols-4">
+          <div className="products grid grid-cols-6 gap-[260px] sm:gap-[310px] overflow-x-scroll">
             {products.map((el) => {
               return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
             })}
           </div>
         </div>
-      </section> */}
-
-      
+      </section>
     </>
   );
 };
