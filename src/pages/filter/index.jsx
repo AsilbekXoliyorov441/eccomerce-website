@@ -12,7 +12,7 @@ const FilterPage = () => {
 
   return (
     <>
-      <section id="filter" className=" pt-[50px] sm:pt-[140px]">
+      <section id="filter" className=" pt-[50px] pb-[61px] sm:pb-[0px] sm:pt-[140px]">
         <div className="container mx-auto px-[15px]  lg:px-25">
           <h1 className="text-[24px] text-[#1B1D1F] font-bold mb-[10px] sm:mb-[30px]">
             Колесные диски

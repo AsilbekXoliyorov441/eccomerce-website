@@ -1,15 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const FilterProduct = (...el) => {
-  let res = el[0].el
-  
+  let res = el[0].el;
+
   return (
     <div className="hover:shadow-xl bg-[white] group duration-300 max-w-[400px] w-full max-h-[400px] border-[1px] rounded-[6px] overflow-hidden p-[10px] sm:p-[20px]  border-[#E3E3E8]">
       <img
         className="mx-auto flex justify-center"
         src="/product-1.png"
         alt=""
-        
       />
       <h2 className=" sm:text-[18px] text-[#1B1D1F] font-bold mt-[20px]">
         {res.name}
@@ -25,6 +24,6 @@ const FilterProduct = (...el) => {
       </button>
     </div>
   );
-}
+};
 
-export default FilterProduct
+export default FilterProduct;

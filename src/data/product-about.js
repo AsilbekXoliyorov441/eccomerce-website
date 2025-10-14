@@ -6,13 +6,13 @@ let productAbout = [
         url: "/about-1.png",
     },
     {
-        id: 1,
+        id: 2,
         name: "Шины зимние дешевле",
         desc: "Выбрать",
         url: "/about-2.png",
     },
     {
-        id: 1,
+        id: 3,
         name: "Запчасти для TO",
         desc: "Смотреть",
         url: "/about-3.png",
