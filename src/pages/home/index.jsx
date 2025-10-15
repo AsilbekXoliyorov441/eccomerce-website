@@ -40,7 +40,7 @@ const HomePage = () => {
               <img src="/Arrow.png" alt="" />
             </Link>
           </div>
-          <div className="products grid grid-cols-6 gap-[260px] sm:gap-[310px] overflow-x-scroll">
+          <div className="products grid grid-cols-4 gap-[210px] sm:gap-[295px] lg:gap-[330px] xl:gap-[230px] 2xl:gap-[10px] overflow-x-scroll">
             {products.map((el) => {
               return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
             })}
@@ -57,11 +57,11 @@ const HomePage = () => {
         </div>
       </section>
       <section id="products">
-        <div className="container mx-auto px-[20px] lg:px-[100px] mt-[30px] sm:mt-[60px]">
+        <div className="container mx-auto px-[20px] lg:px-[100px] mt-[20px] sm:mt-[60px]">
           <div className="flex items-center justify-between pb-[20px]">
             <h1 className="text-[20px] sm:text-[24px] font-bold">Рекомендуем</h1>
           </div>
-          <div className="products grid grid-cols-6 gap-[260px] sm:gap-[310px] overflow-x-scroll">
+          <div className="products grid grid-cols-4 gap-[210px] sm:gap-[295px] lg:gap-[330px] xl:gap-[230px] 2xl:gap-[10px] overflow-x-scroll">
             {products.map((el) => {
               return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
             })}
@@ -69,11 +69,11 @@ const HomePage = () => {
         </div>
       </section>
       <section id="products">
-        <div className="container mx-auto px-[20px] pb-[60px] lg:px-[100px] mt-[30px] sm:mt-[60px]">
+        <div className="container mx-auto px-[20px] pb-[70px] lg:px-[100px] mt-[20px] sm:mt-[60px]">
           <div className="flex items-center justify-between pb-[20px]">
             <h1 className="text-[20px] sm:text-[24px] font-bold">Часто продаваемые</h1>
           </div>
-          <div className="products grid grid-cols-6 gap-[260px] sm:gap-[310px] overflow-x-scroll">
+          <div className="products grid grid-cols-4 gap-[210px] sm:gap-[295px] lg:gap-[330px] xl:gap-[230px] 2xl:gap-[10px] overflow-x-scroll">
             {products.map((el) => {
               return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
             })}

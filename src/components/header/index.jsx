@@ -43,7 +43,7 @@ const Header = () => {
                 />
               </svg> */}
               <Link to={""}>
-                <img className='max-w-[219px] w-full sm:w-[370px]  h-[43.18px] sm:h-[60.77px]' src="/Sifat.jpg" alt="" />
+                <img className='max-w-[170px] w-full sm:w-[370px]  h-[43.18px] sm:h-[50.77px]' src="/Sifat.jpg" alt="" />
               </Link>
             </div>
             <div className="max-w-[530px] w-full hidden sm:flex">
@@ -338,7 +338,7 @@ const Header = () => {
                 </svg>
                 <p className="hidden xl:flex">Вход / Регистрация</p>
               </div>
-              <svg className='flex sm:hidden' onClick={(el) => setMenus(true)} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className='flex ml-[-30px] sm:hidden' onClick={(el) => setMenus(true)} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M2 9C2 5.13401 5.13401 2 9 2C12.866 2 16 5.13401 16 9C16 12.866 12.866 16 9 16C5.13401 16 2 12.866 2 9ZM9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18C11.125 18 13.078 17.2635 14.6177 16.0319L18.2929 19.7071C18.6834 20.0976 19.3166 20.0976 19.7071 19.7071C20.0976 19.3166 20.0976 18.6834 19.7071 18.2929L16.0319 14.6177C17.2635 13.078 18 11.125 18 9C18 4.02944 13.9706 0 9 0Z" fill="#5946D7" />
               </svg>
 
@@ -745,55 +745,12 @@ const Header = () => {
           <li className=''>Возврат товара</li>
           <li>Забыл пароль</li>
         </ul>
-      </div> */}  
+      </div> */}
 
-      <ul id="menus-2"
-        class="flex sm:hidden bg-[white] flex fixed h-[10vw] w-[100vw] bottom-[0px] justify-between items-center flex py-[30px] px-[15px] z-[900]">
-        <li>
-          <Link onClick={(el) => setMenus(false)} to={""} className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 20.5002V16.0002C9.5 14.6192 10.619 13.5002 12 13.5002V13.5002C13.381 13.5002 14.5 14.6192 14.5 16.0002V20.5002H20V11.9143C20 11.3843 19.789 10.8752 19.414 10.5002L12.707 3.79325C12.316 3.40225 11.683 3.40225 11.293 3.79325L4.586 10.5002C4.211 10.8752 4 11.3843 4 11.9143V20.5002H9.5Z" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <p>Главная</p>
-          </Link>
-        </li>
-        <li>
-          <Link className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
-            <svg onClick={(el) => setMenus(true)} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.99622 3.9963H21.0037" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" />
-              <path d="M2.99622 10.9992H7.9983" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" />
-              <path d="M2.99622 18.0022H7.9983" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" />
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7515 17.4772C18.0997 17.4772 20.0033 15.5736 20.0033 13.2254C20.0033 10.8772 18.0997 8.97363 15.7515 8.97363C13.4033 8.97363 11.4998 10.8772 11.4998 13.2254C11.4998 15.5736 13.4033 17.4772 15.7515 17.4772Z" stroke="#55556D" stroke-width="1.5" />
-              <path d="M18.5027 16.4766L21.0037 19.0029" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" />
-            </svg>
-            <p>Каталог</p>
-          </Link>
-        </li>
-        <li>
-          <Link onClick={(el) => setMenus(false)} to={"filter/name"} className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#55556D"><path d="M200-80q-33 0-56.5-23.5T120-160v-480q0-33 23.5-56.5T200-720h80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720h80q33 0 56.5 23.5T840-640v480q0 33-23.5 56.5T760-80H200Zm0-80h560v-480H200v480Zm280-240q83 0 141.5-58.5T680-600h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85h-80q0 83 58.5 141.5T480-400ZM360-720h240q0-50-35-85t-85-35q-50 0-85 35t-35 85ZM200-160v-480 480Z" /></svg>
-            <p>Продукт</p>
-          </Link>
-        </li>
-        <li>
-          <Link onClick={(el) => setMenus(false)} to={"cart"} className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#55556D"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" /></svg>
-            <p>Корзина</p>
-          </Link>
-        </li>
-        <li>
-          <Link onClick={(el) => setMenus(false)} className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
-            <svg width="24" height="24" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 12.5C12.4706 12.5 14.4641 13.3527 15.5932 14.2164C16.8076 15.1453 17 16.775 17 18.3039C17 19.2406 16.2406 20 15.3039 20H2.69607C1.75936 20 1 19.2406 1 18.3039C1 16.775 1.19243 15.1453 2.40682 14.2164C3.53589 13.3527 5.52943 12.5 9 12.5Z" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <circle cx="9" cy="5" r="4" stroke="#55556D" stroke-width="1.5" />
-            </svg>
-            <p>Профиль</p>
-          </Link>
-        </li>
-      </ul>
+
 
       <div className={`fixed top-0 z-[100] pt-[10px] bg-[white] left-0  w-full h-full ${menus ? "left-0" : "left-[-100%]"}`}>
-        <div onClick={(el) => setMenus(false)} className='flex px-[20px] pb-[7px] items-center gap-[4px]'>
+        <div onClick={(el) => setMenus(false)} className='flex px-[15px] pb-[7px] items-center gap-[4px]'>
           <img src="/Arrow right.png" alt="Arrow" />
           <p className='text-[20px] font-bold '>Каталог</p>
         </div>
@@ -802,7 +759,7 @@ const Header = () => {
             <input className='border-1 border-[#bbbbbb] h-full  bg-[#ffff] outline-none text-black rounded-[10px]  h-full w-full px-[28px] py-[20px]' placeholder='Введите номер запчасти или VIN' type="search" />
           </div>
         </div>
-        <div className='px-[30px] overflow-y-scroll h-[500px]'>
+        <div className='px-[20px] overflow-y-scroll h-[500px]'>
           <NavLink onClick={(el) => setMenus(false)}
             to="filter/name"
             className="text-black flex gap-[10px] py-[9px] text-[14px] items-center"
@@ -1190,6 +1147,51 @@ const Header = () => {
       </div>
 
 
+
+      <ul id="menus-2"
+        class="flex sm:hidden bg-[white] flex fixed h-[10vw] w-[100vw] bottom-[0px] justify-between items-center flex py-[30px] px-[15px] z-[900]">
+        <li>
+          <Link onClick={(el) => setMenus(false)} to={""} className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 20.5002V16.0002C9.5 14.6192 10.619 13.5002 12 13.5002V13.5002C13.381 13.5002 14.5 14.6192 14.5 16.0002V20.5002H20V11.9143C20 11.3843 19.789 10.8752 19.414 10.5002L12.707 3.79325C12.316 3.40225 11.683 3.40225 11.293 3.79325L4.586 10.5002C4.211 10.8752 4 11.3843 4 11.9143V20.5002H9.5Z" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p>Главная</p>
+          </Link>
+        </li>
+        <li>
+          <Link className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
+            <svg onClick={(el) => setMenus(true)} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.99622 3.9963H21.0037" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M2.99622 10.9992H7.9983" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M2.99622 18.0022H7.9983" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M15.7515 17.4772C18.0997 17.4772 20.0033 15.5736 20.0033 13.2254C20.0033 10.8772 18.0997 8.97363 15.7515 8.97363C13.4033 8.97363 11.4998 10.8772 11.4998 13.2254C11.4998 15.5736 13.4033 17.4772 15.7515 17.4772Z" stroke="#55556D" stroke-width="1.5" />
+              <path d="M18.5027 16.4766L21.0037 19.0029" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <p>Каталог</p>
+          </Link>
+        </li>
+        <li>
+          <Link onClick={(el) => setMenus(false)} to={"filter/name"} className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#55556D"><path d="M200-80q-33 0-56.5-23.5T120-160v-480q0-33 23.5-56.5T200-720h80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720h80q33 0 56.5 23.5T840-640v480q0 33-23.5 56.5T760-80H200Zm0-80h560v-480H200v480Zm280-240q83 0 141.5-58.5T680-600h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85h-80q0 83 58.5 141.5T480-400ZM360-720h240q0-50-35-85t-85-35q-50 0-85 35t-35 85ZM200-160v-480 480Z" /></svg>
+            <p>Продукт</p>
+          </Link>
+        </li>
+        <li>
+          <Link onClick={(el) => setMenus(false)} to={"cart"} className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#55556D"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" /></svg>
+            <p>Корзина</p>
+          </Link>
+        </li>
+        <li>
+          <Link to={"profile"} onClick={(el) => setMenus(false)} className="flex flex-col text-[12px] text-[#3D3D4B] items-center">
+            <svg width="24" height="24" viewBox="0 0 18 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 12.5C12.4706 12.5 14.4641 13.3527 15.5932 14.2164C16.8076 15.1453 17 16.775 17 18.3039C17 19.2406 16.2406 20 15.3039 20H2.69607C1.75936 20 1 19.2406 1 18.3039C1 16.775 1.19243 15.1453 2.40682 14.2164C3.53589 13.3527 5.52943 12.5 9 12.5Z" stroke="#55556D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="9" cy="5" r="4" stroke="#55556D" stroke-width="1.5" />
+            </svg>
+            <p>Профиль</p>
+          </Link>
+        </li>
+      </ul>
 
 
 

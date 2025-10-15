@@ -11,7 +11,7 @@ const ProductAbout = ({ name, desc, url }) => {
             <img className='absolute top-[70px] left-[280px]' src="/rate-full.svg" alt="Star" />
             <div className='absolute top-[114px] left-[30px] flex gap-[4px] pl-[20px] pr-[15px]  rounded-2xl text-[white] p-[8px] items-center bg-[#5946D7]'>
                 <Link to={`filter/name`} className=' '>{desc}</Link>
-                <img src="/public/Arrow-2.png" alt="" />
+                <img src="/Arrow-2.png" alt="" />
             </div>
         </Link>
     );
