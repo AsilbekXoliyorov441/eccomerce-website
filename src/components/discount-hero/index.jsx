@@ -27,7 +27,7 @@ const Discount = () => {
         className="mySwiper"
       >
         <SwiperSlide className='SwiperSlide-css text-[white]'>
-          <NavLink to='cart' className='text-left'>
+          <NavLink to='filter/name' className='text-left'>
             <h1>Оригинальные автомасла <br />
               cо скидкой
               <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
@@ -38,7 +38,7 @@ const Discount = () => {
           </NavLink>
         </SwiperSlide>
         <SwiperSlide className='SwiperSlide-css text-[white]'>
-          <NavLink to='cart' className='text-left'>
+          <NavLink to='filter/name' className='text-left'>
             <h1> Mobil SUPER 3000 X1 <br />  5W-40, 1 л.
               <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
                 18%
@@ -49,7 +49,7 @@ const Discount = () => {
           </NavLink>
         </SwiperSlide>
         <SwiperSlide className='SwiperSlide-css text-[white]'>
-          <NavLink to='cart' className='text-left'>
+          <NavLink to='filter/name' className='text-left'>
             <h1>Моторные масла <br /> Genesis
               <span className='bg-[#FB6019] ml-[10px] sm:ml-[20px] px-[15px] rounded-2xl'>
                 25%

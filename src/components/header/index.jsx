@@ -344,7 +344,7 @@ const Header = () => {
 
             </div>
           </div>
-          <hr className="text-[#E3E3E8] border-[1px]" />
+          <hr className="hidden sm:flex text-[#E3E3E8] border-[1px]" />
 
           <div className="pt-[20px] flex items-center justify-between gap-[10px] hidden sm:flex pb-[20px]">
             <NavLink

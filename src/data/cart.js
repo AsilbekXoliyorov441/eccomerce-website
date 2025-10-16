@@ -35,7 +35,6 @@ let products = [
         rating: "4.0 (51)",
         url: "/products-3.png",
     },
-
 ];
 
 export default products
