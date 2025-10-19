@@ -6,7 +6,7 @@ const FilterProduct = (...el) => {
   return (
     <div className="hover:shadow-xl bg-[white] group duration-300 max-w-[400px] w-full max-h-[400px] border-[1px] rounded-[6px] overflow-hidden p-[10px] sm:p-[20px]  border-[#E3E3E8]">
       <img
-        className="mx-auto flex justify-center"
+        className="mx-auto flex max-w-[100px] sm:max-w-[200px] justify-center"
         src="/product-1.png"
         alt=""
       />

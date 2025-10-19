@@ -10,6 +10,7 @@ import CatalogPage from "./pages/catalog";
 import Cart2Page from "./pages/cart-2";
 import RegisterPage from "./pages/register";
 import RegisterPhonePage from "./pages/registerPhone";
+import CaruselPage from "./pages/carusel";
 
 const App = () => {
   return (
@@ -25,7 +26,8 @@ const App = () => {
           <Route path="cart-2" element={<Cart2Page />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="registerPhone" element={<RegisterPhonePage />} />
-
+          <Route path="car" element={<CaruselPage />} />
+          <Route path="carusel" element={<CaruselPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

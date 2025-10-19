@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const RegisterPage = () => {
     return (
@@ -14,9 +15,9 @@ const RegisterPage = () => {
                             <button className='max-w-[200px] w-full pb-[10px] cursor-pointer border-b-[2px] border-[#6B59CC]'>
                                 <p className='text-[#6B59CC] text-[15px] sm:text-[18px]'>Электронная почта</p>
                             </button>
-                            <button className='max-w-[200px] w-full pb-[10px] cursor-pointer border-b-[1px]   border-[#DEDEE2] w-full'>
+                            <Link to={"/registerPhone"} className='max-w-[200px] w-full pb-[10px] cursor-pointer border-b-[1px]   border-[#DEDEE2] w-full'>
                                 <p className='text-[15px] sm:text-[18px]'>Номер телефона</p>
-                            </button>
+                            </Link>
                         </div>
                         <div className='px-[20px] sm:px-[50px] flex flex-col gap-[20px] pb-[20px]'>
                             <input className='max-w-[400px] pl-[20px] py-[13px] outline-none rounded-[6px] w-full border-[1px] border-[#DEDEE2] h-[48px]' placeholder='Электронная почта *' type="email" />
