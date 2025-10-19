@@ -12,7 +12,7 @@ const RegisterPhonePage = () => {
                         </div>
                         <hr className='text-[#E3E3E8]' />
                         <div className='px-[20px] sm:px-[50px] py-[30px] whitespace-nowrap flex items-center justify-between'>
-                            <Link className='max-w-[200px] w-full pb-[10px] cursor-pointer border-b-[1px] border-[#DEDEE2]'>
+                            <Link to={"/register"} className='max-w-[200px] w-full pb-[10px] cursor-pointer border-b-[1px] border-[#DEDEE2]'>
                                 <p className='text-[black] text-[15px] sm:text-[18px]'>Электронная почта</p>
                             </Link>
                             <button className='max-w-[200px] w-full pb-[10px] cursor-pointer border-b-[2px]   border-[#6B59CC] w-full'>
