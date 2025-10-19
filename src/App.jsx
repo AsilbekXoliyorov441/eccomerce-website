@@ -8,6 +8,7 @@ import Layout from './components/layout/index';
 import ProfilePage from "./pages/profile";
 import CatalogPage from "./pages/catalog";
 import Cart2Page from "./pages/cart-2";
+import Caruesel from "./pages/carousel";
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="catalog" element={<CatalogPage />} />
           <Route path="cart-2" element={<Cart2Page />} />
-
+          <Route path="car" element={<Caruesel />} />
         </Route>
       </Routes>
     </BrowserRouter>

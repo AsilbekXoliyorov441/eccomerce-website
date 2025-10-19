@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProductCard = ({ name, url, discount, rating, article, price }) => {
     return (
-        <div className="hover:shadow-xl cursor-pointer  bg-[white] group duration-300 w-[200px] sm:w-[280px] lg:w-[315px] 2xl:w-[325px] border-[1px] rounded-[6px] overflow-hidden p-[10px] sm:p-[20px]  border-[#E3E3E8]">
+        <div className="hover:shadow-xl cursor-pointer  bg-[white] group duration-300 max-w-[350px] w-full border-[1px] rounded-[6px] overflow-hidden p-[10px] sm:p-[20px]  border-[#E3E3E8]">
             <img className='h-[100px] sm:h-[170px] xl:h-[222px] pl-[35px] sm:pl-[25px]' src={url} alt="Img" />
             <div className='flex items-center justify-between gap-[10px] pt-[14px]'>
                 <p className='text-[#7A7680] text-[10px] sm:text-[12px] xl:text-[13px] whitespace-nowrap'>{article}</p>
