@@ -1,51 +1,48 @@
-import { useState, useMemo, useEffect } from "react";
-import filterProducts from "./../../data/filter-products";
+import { useState, useMemo } from "react";
+import filterProducts from "../../data/filter-products";
 
-export default function FilterBrand({ filtered, setFiltered }) {
+export default function FilterBrand({ onBrandChange }) {
   const [isOpen, setIsOpen] = useState(true);
   const [selected, setSelected] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [showAll, setShowAll] = useState(false);
-  let res = [];
-  let brands = [];
-  console.log(filtered);
-  console.log(selected);
-  
 
-  for (let el of filterProducts) {
-    if (res.includes(el.brand)) {
-    } else {
-      brands.push(el);
+  const brands = useMemo(() => {
+    const unique = [];
+    const seen = new Set();
+    for (let el of filterProducts) {
+      if (!seen.has(el.brand)) {
+        seen.add(el.brand);
+        unique.push(el.brand);
+      }
     }
-  }
+    return unique;
+  }, []);
 
-  useEffect(() => {
-    setFiltered(selected.length > 0  ? filterProducts.filter((el) => selected.includes(el.id)) : filterProducts)
-  } , [selected])
-
-  const filteredBrands = useMemo(() => {
-    const filtered = brands.filter((b) =>
-      b.brand.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    return showAll ? filtered : filtered.slice(0, 5);
-  }, [searchTerm, showAll]);
-
-  const toggleSelect = (id) => {
-    setSelected((prev) =>
-      prev.includes(id) ? prev.filter((v) => v !== id) : [...prev, id]
-    );
+  const toggleSelect = (brand) => {
+    let updated = [];
+    if (selected.includes(brand)) {
+      updated = selected.filter((b) => b !== brand);
+    } else {
+      updated = [...selected, brand];
+    }
+    setSelected(updated);
+    onBrandChange(updated); // ✅ Parentga yuborish
   };
 
+  const filteredBrands = brands.filter((b) =>
+    b.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className=" rounded-lg border-none w-full">
-      {/* Header */}
+    <div className="rounded-lg border-none w-full mb-4">
       <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="w-full flex items-center cursor-pointer justify-between px-4 py-3 border-none outline-none text-sm  font-medium text-gray-800 hover:bg-gray-50"
+        onClick={() => setIsOpen((p) => !p)}
+        className="w-full flex justify-between px-4 py-3 text-sm font-medium text-gray-800 hover:bg-gray-50"
       >
         <span>Бренд</span>
         <svg
-          className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
+          className={`w-4 h-4 transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
           xmlns="http://www.w3.org/2000/svg"
@@ -62,64 +59,40 @@ export default function FilterBrand({ filtered, setFiltered }) {
         </svg>
       </button>
 
-      {/* Content */}
-
-      <div className="overflow-hidden">
-        <div
-          className={`px-4 pb-3 ${isOpen ? "mt-[-200%] lg:-mt-[110%]" : ""} duration-300 pt-1 w-full border-t border-gray-100`}
-        >
-          {/* Search input */}
+      {isOpen && (
+        <div className="px-4 pb-3 pt-1 border-t border-gray-100">
           <input
             type="text"
             placeholder="Быстрый поиск"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full rounded-md border border-gray-200 px-3 py-1.5 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+            className="w-full rounded-md border px-3 py-1.5 text-sm mb-2"
           />
-
-          {/* Brand list */}
-          <ul className="mt-3 max-h-48 overflow-y-auto">
-            {filteredBrands.map((brand) => (
-              <li
-                key={brand.id}
-                className="flex items-center gap-2 px-1.5 py-1 rounded-md hover:bg-gray-50 cursor-pointer"
-              >
-                <input
-                  type="checkbox"
-                  checked={selected.includes(brand.id)}
-                  onChange={() => toggleSelect(brand.id)}
-                  id={`${brand.name}`}
-                  className="w-4 h-4 accent-blue-600"
-                />
-                <label
-                  htmlFor={`${brand.name}`}
-                  className="text-sm text-gray-700 w-full cursor-pointer select-none"
-                >
-                  {brand.brand}{" "}
-                  {brand.count && (
-                    <span className="text-gray-400 text-xs ml-1">
-                      ({brand.count})
-                    </span>
-                  )}
-                </label>
-              </li>
-            ))}
-            {filteredBrands.length === 0 && (
-              <p className="text-xs text-gray-400 px-2 py-2">
-                Ничего не найдено
-              </p>
-            )}
+          <ul className="max-h-48 overflow-y-auto">
+            {filteredBrands
+              .slice(0, showAll ? filteredBrands.length : 5)
+              .map((brand) => (
+                <li key={brand} className="flex items-center gap-2 mb-1">
+                  <input
+                    type="checkbox"
+                    checked={selected.includes(brand)}
+                    onChange={() => toggleSelect(brand)}
+                    className="accent-blue-600"
+                  />
+                  <label className="text-sm">{brand}</label>
+                </li>
+              ))}
           </ul>
-
-          {/* Show all / collapse link */}
-          <button
-            onClick={() => setShowAll((prev) => !prev)}
-            className="text-xs text-blue-600 mt-2 hover:underline"
-          >
-            {showAll ? "Скрыть" : "Показать все"}
-          </button>
+          {filteredBrands.length > 5 && (
+            <button
+              onClick={() => setShowAll((p) => !p)}
+              className="text-xs text-blue-600 mt-2 hover:underline"
+            >
+              {showAll ? "Скрыть" : "Показать все"}
+            </button>
+          )}
         </div>
-      </div>
+      )}
     </div>
   );
 }

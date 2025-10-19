@@ -1,45 +1,47 @@
-import React, { useState } from "react";
+import { useState, useMemo } from "react";
+import filterProducts from "../../data/filter-products";
 
-const sizes = [
-  {
-    id: 1,
-    size: 15,
-  },
-  {
-    id: 2,
-    size: 13,
-  },
-  {
-    id: 3,
-    size: 17,
-  },
-  {
-    id: 4,
-    size: 14,
-  },
-  {
-    id: 5,
-    size: 23,
-  },
-  {
-    id: 6,
-    size: 20,
-  },
-];
-
-const FilterSize = () => {
+export default function FilterSize({
+  onSizeChange,
+  selectedSizes,
+  onRangeChange,
+}) {
   const [isOpen, setIsOpen] = useState(false);
+  const [range, setRange] = useState({ min: "", max: "" });
+
+  const sizes = useMemo(() => {
+    const unique = Array.from(new Set(filterProducts.map((p) => p.size)));
+    return unique.sort((a, b) => a - b);
+  }, []);
+
+  const toggleSelect = (size) => {
+    let updated = [];
+    if (selectedSizes.includes(size)) {
+      updated = selectedSizes.filter((s) => s !== size);
+    } else {
+      updated = [...selectedSizes, size];
+    }
+    onSizeChange(updated);
+  };
+
+  const handleRangeChange = (e) => {
+    const { name, value } = e.target;
+    setRange({ ...range, [name]: value });
+  };
+
+  const applyRange = () => {
+    onRangeChange(range);
+  };
+
   return (
-    <div>
+    <div className="rounded-lg border-none w-full">
       <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className={`w-full flex items-center cursor-pointer justify-between px-4 py-3  ${isOpen ? "" : "border-[gray]/20  border-b-[1px]"} outline-none text-sm  font-medium text-gray-800 hover:bg-gray-50`}
+        onClick={() => setIsOpen((p) => !p)}
+        className="w-full flex justify-between px-4 py-3 text-sm font-medium text-gray-800 hover:bg-gray-50"
       >
-        <span>Вылет, мм</span>
+        <span>Размер, мм</span>
         <svg
-          className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -53,43 +55,51 @@ const FilterSize = () => {
           />
         </svg>
       </button>
-      <div className="overflow-hidden pt-[4px]">
-        <div className={`${isOpen ? "mt-[-200%] lg:mt-[-110%]" : ""}  px-4 duration-300`}>
-          <div className={`flex items-center w-full `}>
+
+      {isOpen && (
+        <div className="px-4 pb-3 pt-1 border-t border-gray-100">
+          {/* Range filter */}
+          <div className="flex gap-2 mb-3">
             <input
-              className="bg-[gray]/6 p-[7px] border-[gray]/30 border-[1px] rounded-[4px] outline-none rounded-tr-[0px] rounded-br-[0px] border-r-0 w-[50%]"
-              type="text"
-              placeholder="от 0"
+              type="number"
+              name="min"
+              value={range.min}
+              onChange={handleRangeChange}
+              placeholder="от"
+              className="w-1/2 border px-2 py-1 text-sm rounded-md"
             />
             <input
-              className="bg-[gray]/6 p-[7px] border-[gray]/30 border-[1px] rounded-[4px] outline-none rounded-tl-[0px] rounded-bl-[0px]  w-[50%]"
-              type="text"
-              placeholder="до 68"
+              type="number"
+              name="max"
+              value={range.max}
+              onChange={handleRangeChange}
+              placeholder="до"
+              className="w-1/2 border px-2 py-1 text-sm rounded-md"
             />
+            <button
+              onClick={applyRange}
+              className="px-3 py-1 bg-blue-600 text-white text-xs rounded-md"
+            >
+              OK
+            </button>
           </div>
-          <ul className="mt-3 max-h-48 overflow-y-auto">
-            {sizes.map((el) => {
-              return (
-                <li className="flex items-center gap-2 px-1.5 py-1 rounded-md hover:bg-gray-50 cursor-pointer">
-                  <input
-                    className="w-4 h-4 accent-blue-600"
-                    id={el.size}
-                    type="checkbox"
-                  />
-                  <label
-                    htmlFor={el.size}
-                    className="text-sm text-gray-700 w-full cursor-pointer select-none"
-                  >
-                    {el.size} sm
-                  </label>
-                </li>
-              );
-            })}
+
+          {/* Size checkboxes */}
+          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-1">
+            {sizes.map((size) => (
+              <li key={size} className="flex items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={selectedSizes.includes(size)}
+                  onChange={() => toggleSelect(size)}
+                  className="accent-blue-600"
+                />
+                <label className="text-sm">{size} мм</label>
+              </li>
+            ))}
           </ul>
         </div>
-      </div>
+      )}
     </div>
   );
-};
-
-export default FilterSize;
+}
