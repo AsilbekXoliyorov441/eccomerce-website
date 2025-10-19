@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const ProfilePage = () => {
   return (
@@ -8,7 +9,9 @@ const ProfilePage = () => {
           <div className='fixed top-0 z-[800] bg-[white] left-0 duration-300 w-full h-full'>
             <div className='text-[#616064]'>
               <div className='py-[15px] flex items-center justify-end px-[25px]'>
-                <p>Войти / Зарегистрироваться</p>
+                <Link to='/register'>
+                  Войти / Зарегистрироваться
+                </Link>
               </div>
               <hr className='text-[#ebebef] border-[4px]' />
               <div className='flex flex-col gap-[15px] px-[20px] py-[20px]'>

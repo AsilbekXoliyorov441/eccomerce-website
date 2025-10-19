@@ -8,7 +8,9 @@ import Layout from './components/layout/index';
 import ProfilePage from "./pages/profile";
 import CatalogPage from "./pages/catalog";
 import Cart2Page from "./pages/cart-2";
-import Caruesel from "./pages/carousel";
+import RegisterPage from "./pages/register";
+import RegisterPhonePage from "./pages/registerPhone";
+import CaruselPage from "./pages/carusel";
 
 const App = () => {
   return (
@@ -22,7 +24,10 @@ const App = () => {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="catalog" element={<CatalogPage />} />
           <Route path="cart-2" element={<Cart2Page />} />
-          <Route path="car" element={<Caruesel />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="registerPhone" element={<RegisterPhonePage />} />
+          <Route path="car" element={<CaruselPage />} />
+          <Route path="carusel" element={<CaruselPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

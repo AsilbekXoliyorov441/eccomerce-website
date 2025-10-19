@@ -10,6 +10,7 @@ import ProductCard from "../../components/products";
 import { Link } from "react-router-dom";
 import productAbout from "../../data/product-about";
 import ProductAbout from "../../components/discount-about";
+import CaruselPage from "../carusel";
 
 
 
@@ -32,23 +33,12 @@ const HomePage = () => {
         </div>
       </section> */}
       <section id="products">
-        <div className="container mx-auto px-[20px] lg:px-[100px] mt-[-60px] sm:mt-[-35px]">
-          <div className="flex items-center justify-between pb-[20px]">
-            <h1 className="text-[20px] sm:text-[24px] font-bold">Автомасла</h1>
-            <Link to={`filter/name`} className="flex gap-[7px] items-center rounded-[10px] bg-[#eaeced] p-[5px] sm:p-[10px]">
-              <p className="text-[#5946D7] text-[14px] font-bold">Все автомасла</p>
-              <img src="/Arrow.png" alt="" />
-            </Link>
-          </div>
-          <div className="products grid grid-cols-4 gap-[210px] sm:gap-[295px] lg:gap-[330px] xl:gap-[230px] 2xl:gap-[10px] overflow-x-scroll">
-            {products.map((el) => {
-              return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
-            })}
-          </div>
+        <div className="container mx-auto px-[20px] lg:px-[100px] mt-[-70px] sm:mt-[-10px]">
+          <CaruselPage />
         </div>
       </section>
       <section id="productsAbout">
-        <div className="container mx-auto px-[20px] lg:px-[100px]  pt-[60px]">
+        <div className="container mx-auto px-[20px] lg:px-[100px] mt-[-40px] sm:mt-[0px]">
           <div className="productAbout grid grid-cols-3 gap-[310px] sm:gap-[450px]  xl:gap-[20px] overflow-x-scroll">
             {productAbout.map((el) => {
               return <ProductAbout key={el.name} name={el.name} desc={el.desc} url={el.url} />
@@ -57,27 +47,50 @@ const HomePage = () => {
         </div>
       </section>
       <section id="products">
-        <div className="container mx-auto px-[20px] lg:px-[100px] mt-[20px] sm:mt-[60px]">
+        <div className="container mx-auto flex flex-col gap-[10px] sm:gap-[20px] px-[20px] lg:px-[100px] mt-[30px] sm:mt-[40px]">
+          <div className="flex items-center justify-between pb-[20px]">
+            <h1 className="text-[20px] sm:text-[24px] font-bold">Автомасла</h1>
+            <Link to={`filter/name`} className="flex gap-[7px] items-center rounded-[10px] bg-[#eaeced] p-[5px] sm:p-[10px]">
+              <p className="text-[#5946D7] text-[12px] sm:text-[14px] font-bold">Все автомасла</p>
+              <img src="/Arrow.png" alt="" />
+            </Link>
+          </div>
+          <div>
+            <CaruselPage />
+          </div>
+        </div>
+      </section>
+      <section id="products">
+        <div className="container mx-auto px-[20px] flex flex-col gap-[10px] sm:gap-[20px] lg:px-[100px] mt-[-30px] sm:mt-[60px]">
           <div className="flex items-center justify-between pb-[20px]">
             <h1 className="text-[20px] sm:text-[24px] font-bold">Рекомендуем</h1>
+            <Link to={`filter/name`} className="flex gap-[7px] items-center rounded-[10px] bg-[#eaeced] p-[5px] sm:p-[10px]">
+              <p className="text-[#5946D7] text-[12px] sm:text-[14px] font-bold">Все автомасла</p>
+              <img src="/Arrow.png" alt="" />
+            </Link>
           </div>
-          <div className="products grid grid-cols-4 gap-[210px] sm:gap-[295px] lg:gap-[330px] xl:gap-[230px] 2xl:gap-[10px] overflow-x-scroll">
-            {products.map((el) => {
-              return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
+          <CaruselPage />
+        </div>
+      </section>
+      <section id="productsAbout">
+        <div className="container mx-auto px-[20px] lg:px-[100px] pt-[0px] mt-[-50px] sm:pt-[60px]">
+          <div className="productAbout grid grid-cols-3 gap-[310px] sm:gap-[450px]  xl:gap-[20px] overflow-x-scroll">
+            {productAbout.map((el) => {
+              return <ProductAbout key={el.name} name={el.name} desc={el.desc} url={el.url} />
             })}
           </div>
         </div>
       </section>
       <section id="products">
-        <div className="container mx-auto px-[20px] pb-[70px] lg:px-[100px] mt-[20px] sm:mt-[60px]">
+        <div className="container mx-auto flex flex-col gap-[10px] sm:gap-[20px] px-[20px] lg:px-[100px] mt-[20px] sm:mt-[60px]">
           <div className="flex items-center justify-between pb-[20px]">
-            <h1 className="text-[20px] sm:text-[24px] font-bold">Часто продаваемые</h1>
+            <h1 className="text-[18px] sm:text-[24px] font-bold">Часто продаваемые</h1>
+            <Link to={`filter/name`} className="flex gap-[7px] items-center rounded-[10px] bg-[#eaeced] p-[5px] sm:p-[10px]">
+              <p className="text-[#5946D7] text-[12px] sm:text-[14px] font-bold">Все автомасла</p>
+              <img src="/Arrow.png" alt="" />
+            </Link>
           </div>
-          <div className="products grid grid-cols-4 gap-[210px] sm:gap-[295px] lg:gap-[330px] xl:gap-[230px] 2xl:gap-[10px] overflow-x-scroll">
-            {products.map((el) => {
-              return <ProductCard name={el.name} price={el.price} url={el.url} discount={el.discount} rating={el.rating} article={el.article} />;
-            })}
-          </div>
+          <CaruselPage />
         </div>
       </section>
     </>
